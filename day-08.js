@@ -22,21 +22,15 @@ function whatNumberIsIt(n) {
 }
 
 //https://www.codewars.com/kata/57238ceaef9008adc7000603/solutions/javascript
-function colorOf(r, g, b) {
-   const red =
-      r.toString(16).length <= 1
-         ? (r = "0" + r.toString(16))
-         : (r = r.toString(16));
-   const green =
-      g.toString(16).length <= 1
-         ? (g = "0" + g.toString(16))
-         : (g = g.toString(16));
-   const blue =
-      b.toString(16).length <= 1
-         ? (b = "0" + b.toString(16))
-         : (b = b.toString(16));
-   return `#${red}${green}${blue}`;
+function colorOf(...rgb) {
+   return rgb.reduce((webColor, value) => {
+      const toSixTeen = value.toString(16);
+      return toSixTeen.length <= 1
+         ? `${webColor}0${toSixTeen}`
+         : `${webColor}${toSixTeen}`;
+   }, "#");
 }
+
 
 //https://www.codewars.com/kata/57256064856584bc47000611/solutions/javascript
 const howManySmaller = (arr, n) => arr.filter((el) => el.toFixed(2) < n).length;
