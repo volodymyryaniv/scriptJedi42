@@ -1,12 +1,12 @@
 //https://www.codewars.com/kata/572ab0cfa3af384df7000ff8/train/javascript
-function shuffleIt(arr,...arrays){
-  arrays.map(el => {
-    let [first,second] = [el[0],el[1]];
-    [arr[first],arr[second]] = [arr[second],arr[first]]
-    return arr;
-  })
-  return arr;
+function shuffleIt(arr, ...arrays) {
+   arrays.map(
+      ([first, second]) =>
+         ([arr[first], arr[second]] = [arr[second], arr[first]])
+   );
+   return arr;
 }
+
 
 //https://www.codewars.com/kata/5fd8aa5743b49e0012d43e50/train/javascript
 function loopArr(arr, direction, steps) {
