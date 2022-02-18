@@ -7,4 +7,4 @@ Function.prototype.bind = function (ctx) {
 };
 
 //https://www.codewars.com/kata/559f3e20f4f29869cf0000ea/train/javascript
-const OrderPeople = people => people.sort((first, next) => first.age - next.age);
+const OrderPeople = people => [...people].sort((first, next) => first.age - next.age);
